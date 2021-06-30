@@ -1,0 +1,52 @@
+<html>
+<!--<div style="background-image: url('images/docker.png')"	
+-->
+<title>K8s</title>
+<head><style>
+
+body{
+            font-family: latha;
+            color: white;
+            background: linear-gradient(
+            rgba(0,0,0,0.65),rgba(0,0,0,0.38),rgba(0,0,0,0))     ,url(k8s.jpg)no-repeat;
+            background-size: cover;
+            height: 50%
+        }
+</style>
+</head>
+<body>
+<script>
+function web() {
+
+var i = document.getElementById("in1").value
+
+var xhr = new XMLHttpRequest();
+xhr.open("Get", "http://192.168.99.101/cgi-bin/web1.py?x=" + i, true);
+xhr.send();
+
+xhr.onload = function() {
+	var output = xhr.responseText;
+
+	document.getElementById("d1").innerHTML = output;	
+}
+}
+
+</script>
+<center>
+<h1 style="color:green; font-family:papyrus">Kubernetes Live CMD</h1>
+<h2 style="color:green; font-family:papyrus	">Enter Your Command</h2>
+
+<h3 style="color:white">[root@localhost ~]# <input id="in1"; style="background:transparent; border:2px solid blue; color:white; border-radius:8px; font-family:papyrus"></h3>
+<br/>
+
+<pre>
+<h3>
+<div id="d1"; style="font-family:papyrus">Output</div></h3>
+</pre>
+<button onclick="web()" style="background:transparent; color:white; border-radius:8px; border:2px solid blue; font-family:papyrus">Get Output</button>
+</center>
+
+</div>
+</body>
+</html>
+
